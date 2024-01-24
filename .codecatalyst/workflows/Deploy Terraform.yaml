@@ -1,0 +1,29 @@
+SchemaVersion: 1.0
+Actions:
+  Build_e3:
+    # Identifies the action. Do not modify this value.
+    Identifier: aws/build@v1.0.0
+
+    # Specifies the source and/or artifacts to pass to the action as input.
+    Inputs:
+      # Optional
+      Sources:
+        - WorkflowSource # This specifies that the action requires this Workflow as a source
+
+    Outputs:
+      # Optional; Automatically discover reports for popular test frameworks
+      AutoDiscoverReports:
+        Enabled: true
+        # Use as prefix for the report files
+        ReportNamePrefix: rpt
+
+    # Defines the action's properties.
+    Configuration:
+      # Required - Steps are sequential instructions that run shell commands
+      Steps:
+        - Run: echo "Installing terraform"
+        - Run: sudo yum install -y yum-utils shadow-utils sudo yum-config-manager --add-repo https://rpm.releases.hashicorp.com/AmazonLin/hashicorp.repo sudo yum -y --nogpgcheck install terraform
+        - Run: echo "Initializing Terraform"
+        - Run: terraform init
+        - Run: terraform plan
+        - Run: terraform apply --auto-approve
