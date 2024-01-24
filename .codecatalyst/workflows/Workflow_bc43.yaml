@@ -28,7 +28,10 @@ Actions:
       # Required - Steps are sequential instructions that run shell commands
       Steps:
         - Run: echo "Installing terraform"
-        - Run: yum install terraform
+        - Run: sudo yum install -y yum-utils shadow-utils sudo yum-config-manager
+            --add-repo
+            https://rpm.releases.hashicorp.com/AmazonLinux/hashicorp.repo sudo
+            yum -y --nogpgcheck install terraform
         - Run: echo "Initializing terraform"
         - Run: terraform init
         - Run: echo "Running terraform"
