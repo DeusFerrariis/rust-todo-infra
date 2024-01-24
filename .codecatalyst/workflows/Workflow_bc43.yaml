@@ -29,7 +29,8 @@ Actions:
       Steps:
         - Run: echo "Installing terraform"
         - Run: sudo yum install -y yum-utils
-        - Run: sudo yum-config-manager --add-repo https://rpm.releases.hashicorp.com/$release/hashicorp.repo
+        - Run: sudo yum-config-manager --add-repo
+            https://rpm.releases.hashicorp.com/RHEL/hashicorp.repo
         - Run: sudo yum install -y terraform
         - Run: echo "Initializing terraform"
         - Run: terraform init
