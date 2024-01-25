@@ -51,19 +51,14 @@ resource "aws_s3_bucket_policy" "bucket_policy" {
         Principal = "*"
         Action = [
           "s3:GetObject",
-          "s3:PutObject"
         ]
         Resource = [
           "${aws_s3_bucket.user_site_bucket.arn}/*"
         ]
+      },
+      {
+        Effect = "Allow"
       }
     ]
   })
 }
-
-resource "aws_s3_object" "user_site_index" {
-  bucket  = aws_s3_bucket.user_site_bucket.id
-  key     = "index.html"
-  content = "<h1>Hello World</h1>"
-}
-
