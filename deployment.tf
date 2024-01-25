@@ -18,7 +18,7 @@ variable "aws_region" {
 }
 
 resource "aws_s3_bucket" "user_site_bucket" {
-  bucket_prefix = "user-site-bucket"
+  bucket = "user-site-bucket"
 }
 
 resource "aws_s3_bucket_website_configuration" "static_user_site" {
@@ -53,7 +53,7 @@ resource "aws_s3_bucket_policy" "bucket_policy" {
           "s3:GetObject"
         ]
         Resource = [
-          "${aws_s3_bucket.www_bucket.arn}/*"
+          "${aws_s3_bucket.user_site_bucket.arn}/*"
         ]
       }
     ]
