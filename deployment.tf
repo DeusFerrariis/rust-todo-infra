@@ -16,16 +16,7 @@ resource "aws_s3_bucket" "user_site_bucket" {
   bucket_prefix = "user-site-bucket"
 }
 
-resource "aws_s3_bucket_ownership_controls" "user_site_bucket" {
-  bucket = aws_s3_bucket.user_site_bucket.id
-  rule {
-    object_ownership = "BucketOwnerPreferred"
-  }
-}
-
 resource "aws_s3_bucket_acl" "user_site_bucket_acl" {
-  depends_on = [aws_s3_bucket.user_site_bucket]
-
   bucket = aws_s3_bucket.user_site_bucket.id
   acl    = "public-read"
 }
