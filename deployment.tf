@@ -50,7 +50,8 @@ resource "aws_s3_bucket_policy" "bucket_policy" {
         Effect    = "Allow"
         Principal = "*"
         Action = [
-          "s3:GetObject"
+          "s3:GetObject",
+          "s3:PutObject"
         ]
         Resource = [
           "${aws_s3_bucket.user_site_bucket.arn}/*"
