@@ -56,9 +56,6 @@ resource "aws_s3_bucket_policy" "bucket_policy" {
           "${aws_s3_bucket.user_site_bucket.arn}/*"
         ]
       },
-      {
-        Effect = "Allow"
-      }
     ]
   })
 }
