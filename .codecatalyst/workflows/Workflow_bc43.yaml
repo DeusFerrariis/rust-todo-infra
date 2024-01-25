@@ -35,8 +35,8 @@ Actions:
         - Run: echo "Initializing terraform"
         - Run: terraform init
         - Run: echo "Running terraform"
-        - Run: terraform plan
-        - Run: terraform apply --auto-approve
+        - Run: terraform plan -no-color
+        - Run: terraform apply --auto-approve -no-color
     Compute:
       Type: EC2
     Environment:
