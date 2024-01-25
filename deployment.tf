@@ -18,7 +18,7 @@ variable "aws_region" {
 }
 
 resource "aws_s3_bucket" "user_site_bucket" {
-  bucket = "user-site-bucket"
+  bucket_prefix = "user-site-bucket"
 }
 
 resource "aws_s3_bucket_website_configuration" "static_user_site" {
