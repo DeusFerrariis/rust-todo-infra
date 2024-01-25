@@ -64,5 +64,5 @@ resource "aws_s3_bucket_policy" "bucket_policy" {
 }
 
 output "user_site_bucket_addr" {
-  value = aws_s3_bucket_website_configuration.website_endpoint
+  value = aws_s3_bucket_website_configuration.static_user_site.website_endpoint
 }
