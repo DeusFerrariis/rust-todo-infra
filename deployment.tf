@@ -16,10 +16,6 @@ resource "aws_s3_bucket" "user_site_bucket" {
   bucket_prefix = "user-site-bucket"
 }
 
-resource "aws_s3_bucket_acl" "user_site_bucket_acl" {
-  bucket = aws_s3_bucket.user_site_bucket.id
-  acl    = "public-read"
-}
 
 resource "aws_s3_bucket_website_configuration" "static_user_site" {
   bucket = aws_s3_bucket.user_site_bucket.id
