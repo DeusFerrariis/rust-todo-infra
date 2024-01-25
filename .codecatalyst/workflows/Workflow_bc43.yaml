@@ -36,6 +36,7 @@ Actions:
         - Run: terraform init
         - Run: echo "Running terraform"
         - Run: terraform plan -no-color
+        - Run: terraform destroy --auto-approve -no-color
         - Run: terraform apply --auto-approve -no-color
     Compute:
       Type: EC2
