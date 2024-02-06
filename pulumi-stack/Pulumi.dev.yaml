@@ -1,0 +1,5 @@
+config:
+  aws-native:profile: AWSAdministratorAccess-310413295224
+  aws-native:region: us-east-1
+  aws:profile: AWSAdministratorAccess-310413295224
+  aws:region: us-east-1

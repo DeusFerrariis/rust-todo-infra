@@ -1,0 +1,6 @@
+name: rust-todo-fs
+runtime:
+  name: python
+  options:
+    virtualenv: venv
+description: IaC for rust todo full stack app
