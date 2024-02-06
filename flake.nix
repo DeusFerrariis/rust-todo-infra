@@ -9,7 +9,7 @@
       with pkgs; {
         devShells.default = mkShell {
           packages = [
-            pulumi
+            pulumi-bin
             poetry
             python3
             awscli2
